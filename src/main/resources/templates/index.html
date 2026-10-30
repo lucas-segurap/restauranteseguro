@@ -1,10 +1,344 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Restaurante Seguro - refeições saborosas, pratos especiais e pedidos para você.">
+
+    <meta name="author" content="Lucas Segura">
+
+    <title>Restaurante Seguro</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
+
 <body>
 
+<!-- HEADER -->
+<header class="site-header">
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand" th:href="@{/}">
+                <span class="navbar-brand-mark">🍽️</span>
+                Restaurante Seguro
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           aria-current="page"
+                           th:href="@{/}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/produtos}">
+                            Cardápio
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/pedidos}">
+                            Pedidos
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main>
+
+    <!-- BANNER PRINCIPAL -->
+    <section class="hero-banner">
+
+        <div class="container hero-content">
+
+            <div class="row align-items-center w-100">
+
+                <div class="col-lg-8">
+
+                        <span class="eyebrow">
+                            Sabor e qualidade em cada prato
+                        </span>
+
+                    <h1>
+                        Uma experiência de sabor para todos os momentos.
+                    </h1>
+
+                    <p>
+                        Pratos preparados com dedicação, ingredientes selecionados
+                        e atendimento especial para tornar sua refeição ainda melhor.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a th:href="@{/produtos}"
+                           class="btn btn-primary">
+                            Conheça nosso cardápio
+                        </a>
+
+                        <a th:href="@{/pedidos}"
+                           class="btn btn-outline-light">
+                            Fazer pedido
+                        </a>
+
+                    </div>
+
+                    <div class="hero-metrics">
+
+                        <div class="metric-card">
+                            <strong>Qualidade</strong>
+                            <span>Ingredientes selecionados</span>
+                        </div>
+
+                        <div class="metric-card">
+                            <strong>Sabor</strong>
+                            <span>Pratos preparados com cuidado</span>
+                        </div>
+
+                        <div class="metric-card">
+                            <strong>Praticidade</strong>
+                            <span>Pedidos de forma simples</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- APRESENTAÇÃO -->
+    <section class="py-5 bg-light">
+
+        <div class="container text-center">
+
+                <span class="text-warning fw-bold text-uppercase">
+                    Experiência Restaurante Seguro
+                </span>
+
+            <h2 class="mt-2 mb-3 fw-bold">
+                Muito mais que uma refeição
+            </h2>
+
+            <p class="text-secondary mx-auto"
+               style="max-width: 700px;">
+
+                No Restaurante Seguro, cada refeição é preparada
+                com atenção aos detalhes, combinando sabor,
+                qualidade e carinho em cada prato.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- DIFERENCIAIS -->
+    <section class="section-shell section-shell-light">
+
+        <div class="container">
+
+            <div class="section-head">
+
+                    <span class="eyebrow"
+                          style="color: var(--cafe-700);">
+                        Nossos diferenciais
+                    </span>
+
+                <h2>
+                    Qualidade em cada detalhe
+                </h2>
+
+            </div>
+
+            <div class="feature-strip">
+
+                <article class="feature-item">
+
+                    <div class="feature-icon">🥘</div>
+
+                    <h3>Pratos especiais</h3>
+
+                    <p>
+                        Refeições preparadas com ingredientes
+                        selecionados e muito cuidado.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-item">
+
+                    <div class="feature-icon">🛵</div>
+
+                    <h3>Entrega prática</h3>
+
+                    <p>
+                        Faça seu pedido com facilidade e receba
+                        sua refeição no endereço desejado.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-item">
+
+                    <div class="feature-icon">🤝</div>
+
+                    <h3>Atendimento especial</h3>
+
+                    <p>
+                        Um atendimento acolhedor, pensado para
+                        proporcionar uma ótima experiência.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOSSA ESSÊNCIA -->
+    <section class="section-shell section-shell-light">
+
+        <div class="container">
+
+            <div class="story-grid">
+
+                <div class="story-panel">
+
+                        <span class="eyebrow"
+                              style="color: var(--cafe-700);">
+                            Nossa essência
+                        </span>
+
+                    <h3>
+                        O prazer de comer bem.
+                    </h3>
+
+                    <p>
+                        No Restaurante Seguro, acreditamos que
+                        uma boa refeição vai além do prato.
+                        Ela reúne sabor, qualidade, cuidado
+                        e bons momentos.
+                    </p>
+
+                    <ul class="story-list">
+
+                        <li>Ingredientes selecionados</li>
+
+                        <li>Preparação cuidadosa dos alimentos</li>
+
+                        <li>Atendimento com atenção e respeito</li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="story-highlight">
+
+                        <span class="eyebrow">
+                            Faça seu pedido
+                        </span>
+
+                    <h3>
+                        Seu prato favorito está a poucos cliques.
+                    </h3>
+
+                    <p>
+                        Explore nosso cardápio, escolha seus
+                        produtos e faça seu pedido de maneira
+                        simples e prática.
+                    </p>
+
+                    <a th:href="@{/produtos}"
+                       class="btn btn-primary mt-3">
+                        Ver cardápio
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="container site-footer-inner">
+
+        <strong>🍽️ Restaurante Seguro</strong>
+
+        <small>
+            &copy; 2026 Restaurante Seguro.
+            Todos os direitos reservados.
+        </small>
+
+    </div>
+
+</footer>
+
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous">
+</script>
+
+<script th:src="@{/js/script.js}"></script>
+
 </body>
+
 </html>
