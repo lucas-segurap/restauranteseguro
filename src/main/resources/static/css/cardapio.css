@@ -1,0 +1,476 @@
+
+/* =====================================================
+   RESTAURANTE SEGURO
+   CARDÁPIO — DESIGN PROFISSIONAL
+===================================================== */
+
+/* =====================================================
+   VARIÁVEIS
+===================================================== */
+
+:root {
+    --cardapio-verde: var(--verde, #315b46);
+    --cardapio-verde-escuro: var(--verde-escuro, #244333);
+    --cardapio-branco: #ffffff;
+    --cardapio-cinza: #737b75;
+    --cardapio-borda: #e5e9e5;
+    --cardapio-fundo: #f5f7f5;
+    --cardapio-sombra: 0 15px 40px rgba(25, 45, 32, 0.09);
+}
+
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+===================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.cardapio-banner,
+.introducao-cardapio,
+.section-cardapio {
+    position: relative;
+}
+
+/* =====================================================
+   BANNER
+===================================================== */
+
+.cardapio-banner {
+    background:
+            linear-gradient(
+                    115deg,
+                    #e7efe8 0%,
+                    #f4f6f1 55%,
+                    #e1ebe2 100%
+            );
+
+    padding: 110px 0;
+    overflow: hidden;
+}
+
+.cardapio-banner-content {
+    max-width: 700px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--cardapio-verde);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.cardapio-banner h1 {
+    color: #202b24;
+    font-size: clamp(40px, 5vw, 62px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1.8px;
+    margin: 20px 0;
+}
+
+.cardapio-banner p {
+    max-width: 560px;
+    color: #626b64;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 32px;
+}
+
+.cardapio-banner .btn-primary {
+    background: var(--cardapio-verde);
+    border: 1px solid var(--cardapio-verde);
+    border-radius: 7px;
+    padding: 14px 28px;
+    font-size: 13px;
+    font-weight: 750;
+    transition: all 0.3s ease;
+}
+
+.cardapio-banner .btn-primary:hover {
+    background: var(--cardapio-verde-escuro);
+    border-color: var(--cardapio-verde-escuro);
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   APRESENTAÇÃO
+===================================================== */
+
+.introducao-cardapio {
+    background: #ffffff;
+    padding: 85px 0 70px;
+    text-align: center;
+}
+
+.introducao-cardapio h2 {
+    color: #26332b;
+    font-size: clamp(27px, 3vw, 37px);
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin: 16px 0;
+}
+
+.introducao-cardapio p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--cardapio-cinza);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* =====================================================
+   SEÇÃO DE PRODUTOS
+===================================================== */
+
+.section-cardapio {
+    background: var(--cardapio-fundo);
+    padding: 75px 0 85px;
+}
+
+.section-head {
+    margin-bottom: 35px;
+}
+
+.section-head h2 {
+    color: #26332b;
+    font-size: clamp(28px, 3vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin: 12px 0;
+}
+
+.section-head p {
+    color: var(--cardapio-cinza);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* =====================================================
+   CONTADOR DE PRODUTOS
+===================================================== */
+
+.section-cardapio .mb-4 {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #68736b;
+    font-size: 13px;
+}
+
+.section-cardapio .mb-4 strong {
+    color: var(--cardapio-verde);
+    font-size: 15px;
+}
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.section-cardapio .row {
+    row-gap: 25px;
+}
+
+/* =====================================================
+   CARTÕES
+===================================================== */
+
+.produto-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border: 1px solid var(--cardapio-borda);
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.035);
+
+    transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease,
+            border-color 0.3s ease;
+}
+
+.produto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--cardapio-sombra);
+    border-color: rgba(49, 91, 70, 0.25);
+}
+
+/* =====================================================
+   CONTEÚDO
+===================================================== */
+
+.produto-conteudo {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 27px;
+}
+
+.produto-conteudo .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+    margin-bottom: 15px;
+}
+
+.produto-conteudo h3 {
+    color: #26332b;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 13px;
+}
+
+.produto-conteudo p {
+    color: #747c75;
+    font-size: 14px;
+    line-height: 1.8;
+    min-height: 50px;
+    margin-bottom: 24px;
+}
+
+/* =====================================================
+   PREÇO
+===================================================== */
+
+.produto-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: auto;
+    padding-top: 20px;
+
+    border-top: 1px solid #edf0ed;
+}
+
+.produto-rodape strong {
+    color: var(--cardapio-verde);
+    font-size: 21px;
+    font-weight: 850;
+    white-space: nowrap;
+}
+
+/* =====================================================
+   BOTÃO
+===================================================== */
+
+.btn-produto {
+    background: var(--cardapio-verde);
+    color: #ffffff;
+
+    border: 1px solid var(--cardapio-verde);
+    border-radius: 6px;
+
+    padding: 11px 17px;
+
+    font-size: 12px;
+    font-weight: 750;
+
+    transition: all 0.3s ease;
+}
+
+.btn-produto:hover {
+    background: var(--cardapio-verde-escuro);
+    border-color: var(--cardapio-verde-escuro);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   ESTADO VAZIO
+===================================================== */
+
+.section-cardapio .text-center.py-5 {
+    background: #ffffff;
+    border: 1px solid var(--cardapio-borda);
+    border-radius: 12px;
+    padding: 55px 20px !important;
+}
+
+.section-cardapio .text-center.py-5 h3 {
+    color: #26332b;
+    font-size: 21px;
+    font-weight: 750;
+}
+
+.section-cardapio .text-center.py-5 p {
+    color: var(--cardapio-cinza);
+    font-size: 14px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.site-footer {
+    background: #202b24;
+    color: #ffffff;
+}
+
+.site-footer-inner {
+    min-height: 100px;
+}
+
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
+
+.btn-produto:focus-visible,
+.cardapio-banner .btn-primary:focus-visible {
+    outline: 3px solid #8bad94;
+    outline-offset: 4px;
+}
+
+/* =====================================================
+   TABLETS
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .cardapio-banner {
+        padding: 85px 0;
+    }
+
+    .produto-conteudo {
+        padding: 23px;
+    }
+
+}
+
+/* =====================================================
+   CELULARES
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .cardapio-banner {
+        padding: 70px 20px;
+        text-align: center;
+    }
+
+    .cardapio-banner-content {
+        margin: 0 auto;
+    }
+
+    .cardapio-banner p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .introducao-cardapio {
+        padding: 60px 15px;
+    }
+
+    .section-cardapio {
+        padding: 55px 0;
+    }
+
+    .section-head {
+        margin-bottom: 27px;
+    }
+
+    .produto-conteudo {
+        padding: 23px;
+    }
+
+}
+
+/* =====================================================
+   CELULARES PEQUENOS
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .cardapio-banner h1 {
+        font-size: 35px;
+    }
+
+    .produto-rodape {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .btn-produto {
+        width: 100%;
+    }
+
+}
+
+/* =====================================================
+   REDUÇÃO DE MOVIMENTO
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+}
+
+/* =====================================================
+   NOTIFICAÇÕES
+===================================================== */
+
+.notificacao-global {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 9999;
+
+    max-width: 350px;
+    padding: 16px 22px;
+
+    background: #315b46;
+    color: #ffffff;
+
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-15px);
+
+    transition: all 0.3s ease;
+}
+
+.notificacao-global.notificacao-visivel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.notificacao-global.erro {
+    background: #a83232;
+}
+
+@media (max-width: 500px) {
+
+    .notificacao-global {
+        left: 15px;
+        right: 15px;
+        top: 15px;
+        max-width: none;
+    }
+
+}

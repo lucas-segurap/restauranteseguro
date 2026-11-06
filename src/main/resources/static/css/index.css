@@ -1,0 +1,866 @@
+
+/* =====================================================
+   RESTAURANTE SEGURO
+   IDENTIDADE VISUAL — ESTILO SOFISTICADO
+===================================================== */
+
+
+/* =====================================================
+   1. CONFIGURAÇÕES DA PÁGINA
+===================================================== */
+
+:root {
+    --marfim: #f3f0e9;
+    --marfim-escuro: #e8e1d5;
+    --marrom: #453526;
+    --marrom-escuro: #211a14;
+    --dourado: #9b8054;
+    --dourado-claro: #c3a878;
+    --branco: #ffffff;
+    --cinza: #77716a;
+
+    --fonte-titulo: Georgia, "Times New Roman", serif;
+    --fonte-texto: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    background: var(--marfim);
+    color: var(--marrom-escuro);
+    font-family: var(--fonte-texto);
+}
+
+
+/* =====================================================
+   2. CABEÇALHO
+===================================================== */
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+    background: var(--marfim);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+
+/* BARRA SUPERIOR */
+
+.header-top {
+    min-height: 37px;
+    border-bottom: 1px solid rgba(69, 53, 38, 0.12);
+}
+
+.header-top-content {
+    min-height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.header-message {
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--cinza);
+}
+
+.header-top-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.header-top-links a {
+    color: var(--marrom);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.header-top-links a:hover {
+    color: var(--dourado);
+}
+
+
+/* NAVEGAÇÃO PRINCIPAL */
+
+.main-navbar {
+    min-height: 88px;
+    padding: 12px 0;
+    background: var(--marfim);
+}
+
+.main-navbar > .container {
+    gap: 25px;
+}
+
+.restaurant-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--marrom) !important;
+    text-decoration: none;
+    margin-right: 35px;
+}
+
+.brand-symbol {
+    width: 49px;
+    height: 49px;
+    border: 1px solid var(--dourado);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fonte-titulo);
+    font-size: 19px;
+    color: var(--dourado);
+    letter-spacing: -1px;
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+.brand-name strong {
+    font-family: var(--fonte-titulo);
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+}
+
+.main-navbar .navbar-nav {
+    gap: 5px;
+}
+
+.main-navbar .nav-link {
+    position: relative;
+    padding: 12px 13px !important;
+    color: var(--marrom) !important;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.1px;
+    transition: color 0.3s ease;
+}
+
+.main-navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 13px;
+    right: 13px;
+    bottom: 5px;
+    height: 1px;
+    background: var(--dourado);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link.active {
+    color: var(--dourado) !important;
+}
+
+.main-navbar .nav-link:hover::after,
+.main-navbar .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+
+/* BOTÕES DO CABEÇALHO */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-left: 18px;
+}
+
+.btn-reservar,
+.btn-visitar {
+    min-height: 42px;
+    padding: 12px 19px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    transition: all 0.3s ease;
+}
+
+.btn-reservar {
+    background: var(--dourado);
+    border: 1px solid var(--dourado);
+    color: var(--branco);
+}
+
+.btn-reservar:hover {
+    background: var(--marrom);
+    border-color: var(--marrom);
+    color: var(--branco);
+}
+
+.btn-visitar {
+    background: transparent;
+    border: 1px solid var(--dourado);
+    color: var(--marrom);
+}
+
+.btn-visitar:hover {
+    background: var(--dourado);
+    color: var(--branco);
+}
+
+
+/* MENU MOBILE */
+
+.main-navbar .navbar-toggler {
+    border: 1px solid var(--dourado);
+    border-radius: 2px;
+}
+
+.main-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(155, 128, 84, 0.2);
+}
+
+
+/* =====================================================
+   3. BANNER PRINCIPAL
+===================================================== */
+
+.hero-banner {
+    position: relative;
+    min-height: 690px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background-image:
+            url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=2200");
+
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(22, 17, 13, 0.82) 0%,
+                    rgba(22, 17, 13, 0.55) 48%,
+                    rgba(22, 17, 13, 0.10) 100%
+            );
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    min-height: 690px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 760px;
+    padding: 90px 0 110px;
+    color: var(--branco);
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: var(--dourado-claro);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.hero-content h1 {
+    max-width: 720px;
+    margin-bottom: 25px;
+    color: var(--branco);
+    font-family: var(--fonte-titulo);
+    font-size: clamp(42px, 5.5vw, 76px);
+    font-weight: 400;
+    line-height: 1.12;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: var(--dourado-claro);
+    font-style: italic;
+}
+
+.hero-content p {
+    max-width: 520px;
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.btn-hero-primary,
+.btn-hero-secondary {
+    min-height: 49px;
+    padding: 15px 24px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-primary {
+    background: var(--dourado);
+    border: 1px solid var(--dourado);
+    color: var(--branco);
+}
+
+.btn-hero-primary:hover {
+    background: var(--branco);
+    border-color: var(--branco);
+    color: var(--marrom-escuro);
+}
+
+.btn-hero-secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: var(--branco);
+}
+
+.btn-hero-secondary:hover {
+    background: var(--branco);
+    border-color: var(--branco);
+    color: var(--marrom-escuro);
+}
+
+.hero-caption {
+    position: absolute;
+    bottom: 25px;
+    right: 12px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   4. APRESENTAÇÃO
+===================================================== */
+
+.intro-section {
+    padding: 120px 0;
+    background: var(--marfim);
+    text-align: center;
+}
+
+.intro-content {
+    max-width: 790px;
+    margin: auto;
+}
+
+.section-eyebrow {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--dourado);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.intro-content h2,
+.section-heading h2,
+.ambiente-content h2,
+.final-section h2 {
+    margin-bottom: 25px;
+    color: var(--marrom-escuro);
+    font-family: var(--fonte-titulo);
+    font-size: clamp(34px, 4vw, 49px);
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.intro-content h2 span,
+.section-heading h2 span,
+.ambiente-content h2 span,
+.final-section h2 span {
+    color: var(--dourado);
+    font-style: italic;
+}
+
+.intro-content p {
+    max-width: 690px;
+    margin: 0 auto 30px;
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.link-elegante {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--marrom);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    border-bottom: 1px solid var(--dourado);
+    padding-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.link-elegante span {
+    color: var(--dourado);
+    font-size: 18px;
+}
+
+.link-elegante:hover {
+    color: var(--dourado);
+}
+
+
+/* =====================================================
+   5. GASTRONOMIA
+===================================================== */
+
+.gastronomia-section {
+    padding: 110px 0;
+    background: #eae5dc;
+}
+
+.section-heading {
+    max-width: 680px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.section-heading p {
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.gastronomia-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 25px;
+}
+
+.gastronomia-card {
+    overflow: hidden;
+    background: var(--marfim);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gastronomia-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(43, 30, 18, 0.12);
+}
+
+.gastronomia-card-large {
+    grid-row: span 2;
+}
+
+.gastronomia-image {
+    width: 100%;
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.gastronomia-card-large .gastronomia-image {
+    height: 420px;
+}
+
+.gastronomia-card:hover .gastronomia-image {
+    transform: scale(1.025);
+}
+
+.image-principal {
+    background-image: url("https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=1100");
+}
+
+.image-entrada {
+    background-image: url("https://images.unsplash.com/photo-1541014741259-de529411b96a?w=900");
+}
+
+.image-sobremesa {
+    background-image: url("https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=900");
+}
+
+.gastronomia-info {
+    padding: 25px 28px 30px;
+}
+
+.gastronomia-info span {
+    color: var(--dourado);
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.gastronomia-info h3 {
+    margin: 12px 0;
+    color: var(--marrom-escuro);
+    font-family: var(--fonte-titulo);
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.gastronomia-info p {
+    margin: 0;
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.gastronomia-action {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.btn-outline-elegante {
+    padding: 15px 28px;
+    border: 1px solid var(--dourado);
+    border-radius: 2px;
+    color: var(--marrom);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-elegante:hover {
+    background: var(--dourado);
+    color: var(--branco);
+}
+
+
+/* =====================================================
+   6. AMBIENTE
+===================================================== */
+
+.ambiente-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 550px;
+    background: var(--marrom-escuro);
+}
+
+.ambiente-image {
+    min-height: 550px;
+    background-image:
+            url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1300");
+    background-size: cover;
+    background-position: center;
+}
+
+.ambiente-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 75px 12%;
+    color: var(--branco);
+}
+
+.ambiente-content h2 {
+    color: var(--branco);
+}
+
+.ambiente-content h2 span {
+    color: var(--dourado-claro);
+}
+
+.ambiente-content p {
+    max-width: 460px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    line-height: 2;
+}
+
+
+/* =====================================================
+   7. CHAMADA FINAL
+===================================================== */
+
+.final-section {
+    padding: 115px 0;
+    background: var(--marfim);
+    text-align: center;
+}
+
+.final-section h2 {
+    max-width: 760px;
+    margin: 0 auto 20px;
+}
+
+.final-section p {
+    margin-bottom: 30px;
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   8. RODAPÉ
+===================================================== */
+
+.site-footer {
+    padding: 55px 0 20px;
+    background: #211a14;
+    color: var(--branco);
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 35px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-brand strong {
+    font-family: var(--fonte-titulo);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+
+.footer-brand p {
+    margin: 5px 0 0;
+    color: #b6aa9a;
+    font-size: 11px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #d5c9b9;
+    text-decoration: none;
+    font-size: 11px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--dourado-claro);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom p,
+.footer-bottom span {
+    margin: 0;
+    color: #a99f92;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+}
+
+
+/* =====================================================
+   9. RESPONSIVIDADE — TABLETS
+===================================================== */
+
+@media (max-width: 1199px) {
+
+    .header-actions {
+        margin: 15px 0 0;
+    }
+
+    .main-navbar .navbar-collapse {
+        padding: 15px 0;
+    }
+
+    .main-navbar .navbar-nav {
+        align-items: flex-start !important;
+    }
+
+    .main-navbar .nav-link {
+        padding-left: 0 !important;
+    }
+
+    .main-navbar .nav-link::after {
+        left: 0;
+        right: 0;
+    }
+
+}
+
+
+/* =====================================================
+   10. RESPONSIVIDADE — CELULARES
+===================================================== */
+
+@media (max-width: 767px) {
+
+    .header-message {
+        display: none;
+    }
+
+    .header-top-content {
+        justify-content: center;
+    }
+
+    .header-top-links {
+        gap: 17px;
+    }
+
+    .main-navbar {
+        min-height: 75px;
+    }
+
+    .restaurant-brand {
+        margin-right: 0;
+    }
+
+    .hero-banner,
+    .hero-container {
+        min-height: 620px;
+    }
+
+    .hero-banner {
+        background-position: 58% center;
+    }
+
+    .hero-content {
+        padding: 75px 12px 100px;
+    }
+
+    .hero-content h1 {
+        font-size: 43px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-caption {
+        right: 15px;
+        left: 15px;
+        text-align: center;
+        font-size: 8px;
+    }
+
+    .intro-section,
+    .gastronomia-section,
+    .final-section {
+        padding: 75px 0;
+    }
+
+    .intro-content h2,
+    .section-heading h2,
+    .ambiente-content h2,
+    .final-section h2 {
+        font-size: 35px;
+    }
+
+    .gastronomia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gastronomia-card-large {
+        grid-row: auto;
+    }
+
+    .gastronomia-card-large .gastronomia-image {
+        height: 270px;
+    }
+
+    .gastronomia-image {
+        height: 230px;
+    }
+
+    .ambiente-section {
+        grid-template-columns: 1fr;
+    }
+
+    .ambiente-image {
+        min-height: 320px;
+    }
+
+    .ambiente-content {
+        padding: 65px 25px;
+    }
+
+    .footer-content,
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-links {
+        gap: 18px;
+    }
+
+}
+
+
+/* =====================================================
+   11. CELULARES PEQUENOS
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .brand-name strong {
+        font-size: 16px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+}

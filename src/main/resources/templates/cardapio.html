@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Conheça o cardápio do Restaurante Seguro.">
+
+    <meta name="author" content="Lucas Segura">
+
+    <title>Cardápio | Restaurante Seguro</title>
+
+    <link rel="stylesheet"
+          th:href="@{/bootstrap/css/bootstrap.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/cardapio.css}">
+
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+
+<header class="site-header">
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+        <div class="container">
+
+            <a class="navbar-brand" th:href="@{/}">
+                <span class="navbar-brand-mark">🍽️</span>
+                Restaurante Seguro
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse"
+                 id="menuPrincipal">
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/}">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                           aria-current="page"
+                           th:href="@{/cardapio}">
+                            Cardápio
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/pedidos}">
+                            Pedidos
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- CONTEÚDO PRINCIPAL -->
+
+<main>
+
+    <!-- BANNER -->
+
+    <section class="cardapio-banner">
+
+        <div class="container">
+
+            <div class="cardapio-banner-content">
+
+                <span class="eyebrow">
+                    SABOR E QUALIDADE EM CADA PRATO
+                </span>
+
+                <h1>
+                    Nosso cardápio
+                </h1>
+
+                <p>
+                    Descubra nossas opções e encontre
+                    a refeição ideal para o seu momento.
+                </p>
+
+                <a href="#produtos" class="btn btn-primary">
+                    Explorar cardápio
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- APRESENTAÇÃO -->
+
+    <section class="introducao-cardapio">
+
+        <div class="container text-center">
+
+            <span class="eyebrow">
+                NOSSA SELEÇÃO
+            </span>
+
+            <h2>
+                Sabores preparados para você
+            </h2>
+
+            <p>
+                Conheça os produtos disponíveis em nosso
+                restaurante e escolha seus favoritos.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUTOS -->
+
+    <section class="section-cardapio" id="produtos">
+
+        <div class="container">
+
+            <div class="section-head">
+
+                <span class="eyebrow">
+                    RESTAURANTE SEGURO
+                </span>
+
+                <h2>
+                    Produtos disponíveis
+                </h2>
+
+                <p>
+                    Confira nossa seleção atualizada de produtos.
+                </p>
+
+            </div>
+
+
+            <!-- CONTADOR -->
+
+            <div class="mb-4">
+
+                <span>Produtos encontrados:</span>
+
+                <strong th:text="${#lists.size(produtos)}">
+                    0
+                </strong>
+
+            </div>
+
+
+            <!-- LISTAGEM DINÂMICA -->
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4"
+                     th:each="item : ${produtos}">
+
+                    <article class="produto-card">
+
+                        <div class="produto-conteudo">
+
+                            <span class="eyebrow"
+                                  th:text="'Código: ' + ${item.codigo}">
+                                Código
+                            </span>
+
+                            <h3 th:text="${item.produto}">
+                                Nome do produto
+                            </h3>
+
+                            <p th:text="${item.descricao}">
+                                Descrição do produto.
+                            </p>
+
+                            <div class="produto-rodape">
+
+                                <strong>
+
+                                    R$
+
+                                    <span th:text="${#numbers.formatDecimal(item.valor, 1, 2)}">
+                                        0,00
+                                    </span>
+
+                                </strong>
+
+                                <button type="button"
+                                        class="btn btn-produto">
+
+                                    Adicionar +
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- ESTADO VAZIO -->
+
+            <div class="text-center py-5"
+                 th:if="${#lists.isEmpty(produtos)}">
+
+                <h3>
+                    Nenhum produto disponível
+                </h3>
+
+                <p>
+                    No momento, não existem produtos ativos
+                    cadastrados em nosso cardápio.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- RODAPÉ -->
+
+<footer class="site-footer">
+
+    <div class="container site-footer-inner">
+
+        <strong>🍽️ Restaurante Seguro</strong>
+
+        <small>
+            &copy; 2026 Restaurante Seguro.
+            Todos os direitos reservados.
+        </small>
+
+    </div>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+<script th:src="@{/js/script.js}"></script>
+
+<script th:src="@{/js/cardapio.js}"></script>
+
+</body>
+
+</html>

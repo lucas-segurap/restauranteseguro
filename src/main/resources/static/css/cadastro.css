@@ -1,0 +1,215 @@
+
+/* =========================================
+   RESTAURANTE SEGURO
+   CADASTRO DE CLIENTES
+========================================= */
+
+:root {
+    --preto: #101010;
+    --card: #191919;
+    --campo: #252525;
+    --cinza: #a8a8a8;
+    --dourado: #d4af37;
+    --dourado-hover: #edc95b;
+    --branco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+            radial-gradient(circle at top, #292317, transparent 45%),
+            var(--preto);
+    color: var(--branco);
+}
+
+/* CONTAINER */
+
+.cadastro-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 18px;
+}
+
+/* CARD */
+
+.cadastro-card {
+    width: 100%;
+    max-width: 760px;
+    padding: 40px;
+    background: var(--card);
+    border: 1px solid #333;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
+}
+
+/* CABEÇALHO */
+
+.cadastro-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.brand-icon {
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    border: 2px solid var(--dourado);
+    border-radius: 15px;
+    color: var(--dourado);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.cadastro-header h1 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.cadastro-header h1 strong {
+    color: var(--dourado);
+}
+
+.cadastro-header p {
+    margin-top: 8px;
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+/* TÍTULOS */
+
+.cadastro-heading {
+    margin-bottom: 27px;
+}
+
+.cadastro-heading h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.cadastro-heading p {
+    margin-top: 7px;
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+/* FORMULÁRIO */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-control {
+    min-height: 47px;
+    padding: 11px 13px;
+    background: var(--campo);
+    border: 1px solid #414141;
+    border-radius: 8px;
+    color: var(--branco);
+}
+
+.form-control::placeholder {
+    color: #858585;
+}
+
+.form-control:focus {
+    background: var(--campo);
+    color: var(--branco);
+    border-color: var(--dourado);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, .15);
+}
+
+/* BOTÃO */
+
+.btn-cadastrar {
+    width: 100%;
+    min-height: 49px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 9px;
+    background: var(--dourado);
+    color: #111;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.btn-cadastrar:hover {
+    background: var(--dourado-hover);
+    transform: translateY(-2px);
+}
+
+/* MENSAGENS */
+
+.alert {
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+/* RODAPÉ */
+
+.cadastro-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.cadastro-footer p {
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+.cadastro-footer a {
+    color: var(--dourado);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 13px;
+}
+
+.copyright {
+    margin-top: 25px;
+    color: #777;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 576px) {
+
+    .cadastro-card {
+        padding: 28px 20px;
+    }
+
+    .cadastro-header h1 {
+        font-size: 22px;
+    }
+
+    .cadastro-heading h2 {
+        font-size: 19px;
+    }
+}

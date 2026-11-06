@@ -1,0 +1,226 @@
+
+/* =========================================
+   RESTAURANTE SEGURO
+   TELA DE LOGIN
+========================================= */
+
+:root {
+    --preto: #101010;
+    --preto-card: #191919;
+    --cinza: #252525;
+    --cinza-texto: #a8a8a8;
+    --branco: #ffffff;
+    --dourado: #d4af37;
+    --dourado-hover: #edc95b;
+    --erro: #dc3545;
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+            radial-gradient(circle at top, #292317 0%, transparent 45%),
+            var(--preto);
+    color: var(--branco);
+}
+
+/* CONTAINER */
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
+}
+
+/* CARD */
+
+.login-card {
+    width: 100%;
+    max-width: 440px;
+    background: var(--preto-card);
+    border: 1px solid #333;
+    border-radius: 18px;
+    padding: 42px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* IDENTIDADE */
+
+.login-brand {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.brand-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 17px;
+    border: 2px solid var(--dourado);
+    border-radius: 16px;
+    color: var(--dourado);
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.login-brand h1 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.login-brand h1 strong {
+    color: var(--dourado);
+}
+
+.login-brand p {
+    margin-top: 9px;
+    color: var(--cinza-texto);
+    font-size: 14px;
+}
+
+/* TÍTULOS */
+
+.login-heading {
+    margin-bottom: 27px;
+}
+
+.login-heading h2 {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.login-heading p {
+    margin-top: 7px;
+    color: var(--cinza-texto);
+    font-size: 13px;
+}
+
+/* FORMULÁRIO */
+
+.form-group {
+    margin-bottom: 21px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-control {
+    min-height: 48px;
+    background: var(--cinza);
+    border: 1px solid #414141;
+    border-radius: 9px;
+    color: var(--branco);
+    padding: 12px 14px;
+}
+
+.form-control::placeholder {
+    color: #858585;
+}
+
+.form-control:focus {
+    background: var(--cinza);
+    border-color: var(--dourado);
+    color: var(--branco);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+/* BOTÃO */
+
+.btn-login {
+    width: 100%;
+    min-height: 49px;
+    margin-top: 10px;
+    background: var(--dourado);
+    border: none;
+    border-radius: 9px;
+    color: #111;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.btn-login:hover {
+    background: var(--dourado-hover);
+    transform: translateY(-2px);
+}
+
+/* MENSAGENS */
+
+.alert {
+    font-size: 13px;
+    border-radius: 9px;
+}
+
+/* RODAPÉ DO CARD */
+
+.login-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.login-footer p {
+    color: var(--cinza-texto);
+    font-size: 13px;
+}
+
+.login-footer a {
+    color: var(--dourado);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    color: var(--dourado-hover);
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+/* COPYRIGHT */
+
+.login-copyright {
+    margin-top: 30px;
+    color: #777;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 480px) {
+
+    .login-card {
+        padding: 30px 23px;
+    }
+
+    .login-brand h1 {
+        font-size: 22px;
+    }
+
+    .login-heading h2 {
+        font-size: 19px;
+    }
+
+}

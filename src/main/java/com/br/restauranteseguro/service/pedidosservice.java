@@ -42,4 +42,10 @@ public class pedidosservice {
     public boolean existe(Long id) {
         return pedidosrepository.existsById(id);
     }
+
+    // Listar pedidos de um cliente pelo CPF
+    public List<pedidos> listarPorCpf(String cpf) {
+        return pedidosrepository.findByCpf(cpf);
+    }
+
 }
